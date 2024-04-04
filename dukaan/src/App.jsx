@@ -1,14 +1,21 @@
+import { useState } from 'react'
 import './App.css'
-import { Sidebar } from './components/sidebar/Sidebar'
-import { Appbar } from "./components/appbar/Appbar"
+import { Appbar } from './components/appbar/Appbar'
 import { Body } from './components/body/Body'
+import { Sidebar } from './components/sidebar/Sidebar'
 
 function App() {
+
+  const [isClick,setClick]  = useState(false);
+
+
+  console.log(isClick);
+
   return (
     <div className='flex'>
-      <Sidebar />
-      <div className='w-screen'>
-        <Appbar />
+      <Sidebar isClick={isClick} />
+      <div>
+        <Appbar setClick ={setClick} />
         <Body />
       </div>
     </div>
